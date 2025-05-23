@@ -4,7 +4,7 @@ import os
 # App configuration
 st.set_page_config(
     page_title="Taji Mvikeni Album by Imara Daima Pathfinder Club, The Saffrons",
-    page_icon="album/over.png" if os.path.exists("album/over.png") else "🎵",
+    page_icon="over.png" if os.path.exists("over.png") else "🎵",
     layout="centered",
     initial_sidebar_state="collapsed",
     menu_items={
@@ -119,22 +119,22 @@ col1, col2 = st.columns(2)  # Two equal columns for images
 
 # First image
 with col1:
-    if os.path.exists("album/over.png"):
-        st.image("album/over.png", caption="Taji Mvikeni Album", width=150)  # Passport size
+    if os.path.exists("over.png"):
+        st.image("over.png", caption="Taji Mvikeni Album", width=150)  # Passport size
     else:
-        st.error("Album cover not found at 'album/over.png'.")
+        st.error("Album cover not found at 'over.png'.")
 
 # Second image
 with col2:
-    if os.path.exists("album/over.jpeg"):  # Replace with your second image path
-        st.image("album/over.jpeg", caption="The Saffrons", width=150)  # Passport size
+    if os.path.exists("over.jpeg"):  # Replace with your second image path
+        st.image("over.jpeg", caption="The Saffrons", width=150)  # Passport size
     else:
-        st.error("Second album cover not found at 'album/over.jpeg'.")
+        st.error("Second album cover not found at 'over.jpeg'.")
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Song list section
 st.markdown("### Song List")
-song_folder = "album"
+song_folder = "."
 mp3_files = [f for f in os.listdir(song_folder) if f.endswith(".mp3")]
 
 if mp3_files:
